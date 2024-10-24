@@ -1,8 +1,8 @@
 interface PokemonCardProps {
     pokemon: {
-        name: string, 
-        src: string, 
-        alt: string,
+        name: string; 
+        imgSrc?: string;
+        alt?: string;
     }
 }
   
