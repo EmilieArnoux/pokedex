@@ -1,5 +1,6 @@
 import "./App.css";
 import PokemonCard from './components/PokemonCard.tsx';
+
 const pokemonList = [
   {
     name: "Bulbasaur",
@@ -10,7 +11,6 @@ const pokemonList = [
     name: "mew",
   },
 ];
-
 
 function App() {
   return (

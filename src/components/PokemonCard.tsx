@@ -1,4 +1,12 @@
-function PokemonCard({pokemon}) {
+interface PokemonCardProps {
+    pokemon: {
+        name: string, 
+        src: string, 
+        alt: string,
+    }
+}
+  
+function PokemonCard({pokemon}:PokemonCardProps) {
 
     return (
     <figure> 
@@ -10,6 +18,4 @@ function PokemonCard({pokemon}) {
      );
   }
 
-
-   
   export default PokemonCard;
