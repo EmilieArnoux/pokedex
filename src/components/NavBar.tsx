@@ -1,27 +1,23 @@
 import React from "react";
-
-interface Pokemon {
-    name: string;
-    imgSrc?: string;
-  }
   
   interface NavBarProps {
-    pokemonIndex: number;
-    setPokemonIndex: (index: number) => void;
-    pokemonList: Pokemon[];
-    handlePrevious: () => void;
-    handleNext: () => void;
-    isPreviousDisabled: boolean;
-    isNextDisabled: boolean;
+    pokemonList: { name: string; imgSrc?: string }[];
+    setPokemonIndex: (index: number) => void; 
   }
 
-  const NavBar : React.FC<NavBarProps> = ({handlePrevious, handleNext, isPreviousDisabled, isNextDisabled }) => {
+  const NavBar : React.FC<NavBarProps> = ({pokemonList, setPokemonIndex}) => {
   
-  return (
-    <div>
-        <button type="button" onClick={handlePrevious} disabled={isPreviousDisabled}>PRECEDENT</button>
-        <button type="button" onClick={handleNext} disabled={isNextDisabled}>SUIVANT</button>
-    </div>
+    return (
+        <section>
+          {pokemonList.map((pokemon, index) => (
+            <button
+              key={pokemon.name}
+              onClick={() => setPokemonIndex(index)}
+            >
+              {pokemon.name}
+            </button>
+          ))}
+        </section>
   );
 };
 
