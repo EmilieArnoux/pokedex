@@ -5,15 +5,22 @@ import React from "react";
     setPokemonIndex: (index: number) => void; 
   }
 
-  const NavBar : React.FC<NavBarProps> = ({pokemonList, setPokemonIndex}) => {
-  
+  const NavBar: React.FC<NavBarProps> = ({ pokemonList, setPokemonIndex }) => {
+
+    const handlePikachu = (index: number, name: string) => {
+
+      if (name === "pikachu") {
+        alert("pika pikachu !!!");
+      }
+      setPokemonIndex(index);
+    };
+
     return (
         <section>
           {pokemonList.map((pokemon, index) => (
             <button
               key={pokemon.name}
-              onClick={() => setPokemonIndex(index)}
-            >
+              onClick={() => handlePikachu(index, pokemon.name)}>
               {pokemon.name}
             </button>
           ))}

@@ -2,6 +2,7 @@ import "./App.css";
 import PokemonCard from './components/PokemonCard.tsx';
 import {useState} from "react";
 import NavBar from './components/navbar.tsx';
+import { useEffect } from "react";
 
     const pokemonList = [
   { name: "bulbasaur", imgSrc: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"},
@@ -13,6 +14,10 @@ import NavBar from './components/navbar.tsx';
 
   function App() {
     const [pokemonIndex, setPokemonIndex] = useState(0);
+
+    useEffect(() => {
+      alert("hello pokemon trainer :)");
+    }, []);
   
     return (
       <section>
