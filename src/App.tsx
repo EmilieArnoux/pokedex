@@ -1,7 +1,7 @@
 import "./App.css";
 import PokemonCard from './components/PokemonCard.tsx';
 import {useState} from "react";
-
+import NavBar from './components/navbar.tsx';
 
     const pokemonList = [
   {
@@ -45,15 +45,21 @@ import {useState} from "react";
     }
   };
 
+  const isPreviousDisabled = pokemonIndex <= 0;
+  const isNextDisabled = pokemonIndex >= pokemonList.length - 1;
+
   return (
     <section>
       <article> 
         <PokemonCard pokemon={pokemonList[pokemonIndex]} />
       </article>
-      <button type="button" onClick={handlePrevious}>PRECEDENT</button>
-      <button type="button" onClick={handleNext}>SUIVANT</button>
+      <NavBar
+        handlePrevious={handlePrevious}
+        handleNext={handleNext}
+        isPreviousDisabled={isPreviousDisabled}
+        isNextDisabled={isNextDisabled}
+      />
     </section>
-
   );
     
   }
